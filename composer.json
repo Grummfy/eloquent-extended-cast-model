@@ -1,0 +1,28 @@
+{
+    "name": "grummfy/eloquent-extended-cast-model",
+    "description": "This library help you to make more advanced cast to eloquent model.",
+    "type": "library",
+    "license": "MIT",
+	"keywords": [
+	  	"traits",
+	  	"eloquent",
+		"laravel",
+		"cast"
+	],
+    "authors": [
+        {
+            "name": "Grummfy",
+            "email": "me@grummfy.be"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "\\Grummfy\\EloquentExtendedCast\\": "src/"
+        }
+    },
+    "require": {
+        "laravel/framework": "~5.4"
+    },
+	"minimum-stability": "dev",
+	"prefer-stable": true
+}
