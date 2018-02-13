@@ -4,6 +4,8 @@ This library help you to make more advanced cast to eloquent model.
 
 Compatible with laravel 5.4 and upper.
 
+Tested with laravel 5.4, 5.5 and 5.6.
+
 ## Install
 
 ```
