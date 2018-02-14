@@ -25,7 +25,7 @@ class SuperModel extends Model
 		'descriptions',
 	];
 
-	protected $_castParameters = [
+	protected $castParameters = [
 		'descriptions' => TranslatableLabel::class,
 		'phones' => Phone::class,
 	];
@@ -56,23 +56,20 @@ class SuperModel extends Model
 
 	public function addPhone(string $prefix, string $number): self
 	{
-		$this->attributes['phones'] = $this->phones->push(new Phone($prefix, $number));
-
+		if (is_null($this->phones))
+		{
+			$this->phones = new ReadOnlyCollection();
+		}
+		$this->phones = $this->phones->push(new Phone($prefix, $number));
 		return $this;
 	}
 
-	public function setPhonesAttribute(Collection $phones): self
-	{
-		$this->attributes['phones'] = new ReadOnlyCollection($phones);
-		return $this;
-	}
-
-	public function fromPeriod(Period $period): string
+	public function toPeriod(Period $period): string
 	{
 		return $period->format();
 	}
 
-	public function toPeriod(string $period): Period
+	public function fromPeriod(string $period): Period
 	{
 		return Period::fromString($period);
 	}
