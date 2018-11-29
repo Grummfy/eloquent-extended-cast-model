@@ -25,6 +25,7 @@ trait CastableModel
 		'real',
 		'float',
 		'double',
+		'decimal',
 		'string',
 		'bool',
 		'boolean',
@@ -34,9 +35,10 @@ trait CastableModel
 		'collection',
 		'date',
 		'datetime',
+		'custom_datetime',
 		'timestamp',
 	];
-	
+
 	public function setAttribute($key, $value)
 	{
 		if ($this->hasCustomSetCast($key))
